@@ -3,6 +3,7 @@ using FilmesApi.Data;
 using FilmesApi.Models;
 using Microsoft.AspNetCore.Mvc;
 using FilmesApi.Data.Dtos.Cinema;
+using FilmesApi.Data.Dtos;
 
 namespace FilmesApi.Controllers
 {
