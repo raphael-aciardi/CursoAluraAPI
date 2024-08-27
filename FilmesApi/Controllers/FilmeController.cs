@@ -34,7 +34,7 @@ public class FilmeController : ControllerBase
         [FromBody] CreateFilmeDto filmeDto)
     {
         Filme filme = _mapper.Map<Filme>(filmeDto);
-        _context.Filmes.Add(filme);
+        _context.Filmes.Add(
         _context.SaveChanges();
         return CreatedAtAction(nameof(RecuperaFilmePorId),
             new { id = filme.Id },
