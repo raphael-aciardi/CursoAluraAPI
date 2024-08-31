@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FilmesApi.Data.Dtos;
+using FilmesApi.Data.Dtos.Cinema;
 using FilmesApi.Data.Dtos.Filme;
 using FilmesApi.Models;
 
@@ -12,6 +13,9 @@ public class FilmeProfile : Profile
 		CreateMap<CreateFilmeDto, Filme>();
         CreateMap<UpdateFilmeDto, Filme>();
         CreateMap<Filme, UpdateFilmeDto>();
-        CreateMap<Filme, ReadFilmeDto>();
+        CreateMap<Filme, ReadFilmeDto>()
+                .ForMember(filmeDto => filmeDto.Sessoes,
+                opt => opt.MapFrom(filme=> filme.Sessoes));
+
     }
 }
